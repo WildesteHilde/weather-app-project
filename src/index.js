@@ -1,6 +1,6 @@
 // Units
-// let lang = "en-US";
-let lang = "de-DE";
+let lang = "en-US";
+//let lang = "de-DE";
 function changeLanguage() {
   lang = lang === "en-US" ? "de-DE" : "en-US";
   updateView();
