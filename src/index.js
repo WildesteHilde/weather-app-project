@@ -1,8 +1,10 @@
 // Units
-let lang = "en-US";
-//let lang = "de-DE";
+//let lang = "en-US";
+let lang = "de-DE";
 function changeLanguage() {
   lang = lang === "en-US" ? "de-DE" : "en-US";
+  document.querySelector("#lang-icon").src =
+    lang === "de-DE" ? "images/usa-flag.png" : "images/german-flag.png";
   updateView();
 }
 document
