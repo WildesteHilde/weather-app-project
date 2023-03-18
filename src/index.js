@@ -38,6 +38,8 @@ function updateView() {
   // InitSearchLabel
   document.querySelector("#location").placeholder =
     lang === "en-US" ? "Search city" : "Ort suchen";
+  document.querySelector("#current-location").innerHTML =
+    lang === "en-US" ? "Current Location" : "Aktueller Ort";
 }
 
 // Initialize Date and Time
