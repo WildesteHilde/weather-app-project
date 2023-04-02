@@ -71,7 +71,7 @@ function getForecastApiUrlWithCityName(cityName) {
   const apiKey = "855d2851678ff543e15aab7ea5e6ebd4";
   let unit = lang === "en-US" ? "imperial" : "metric";
   let langShort = lang === "en-US" ? "en" : "de";
-  return `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${unit}&lang=${langShort}&cnt=5`;
+  return `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${unit}&lang=${langShort}`;
 }
 function getIconSource(iconId) {
   return `https://openweathermap.org/img/wn/${iconId}@2x.png`;
@@ -180,26 +180,25 @@ function updateWind(response) {
   windElement.innerHTML = `Wind ${wind} ${unit}`;
 }
 function updateForecastInfo(response) {
-  console.log(response.data.list);
   // Temperature
   let allForecast = document.querySelectorAll(".forecast-temp-min");
   for (let index = 0; index < allForecast.length; index++) {
     const element = allForecast[index];
     element.innerHTML =
-      Math.round(response.data.list[index].main.temp_min) + "°";
+      Math.round(response.data.list[index * 8].main.temp_min) + "°";
   }
   allForecast = document.querySelectorAll(".forecast-temp-max");
   for (let index = 0; index < allForecast.length; index++) {
     const element = allForecast[index];
     element.innerHTML =
-      Math.round(response.data.list[index].main.temp_max) + "°";
+      Math.round(response.data.list[index * 8].main.temp_max) + "°";
   }
 
   // Icon
   allForecast = document.querySelectorAll(".forecast-weather-icon");
   for (let index = 0; index < allForecast.length; index++) {
     const element = allForecast[index];
-    element.src = getIconSource(response.data.list[index].weather[0].icon);
+    element.src = getIconSource(response.data.list[index * 8].weather[0].icon);
   }
 }
 
@@ -210,7 +209,6 @@ function updateWeatherInfo(response) {
   updateDescription(response);
   updateHumidity(response);
   updateWind(response);
-  updateForecastInfo(response);
 }
 
 function updateSearchLabel() {
