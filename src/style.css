@@ -122,26 +122,20 @@ video {
 
 .forecast-day {
   font-size: smaller;
-  margin-bottom: 0.5em;
   text-align: center;
 }
 
-.forecast-weather {
-  color: #005792;
+.forecast-weather-icon {
+  width: 70%;
   display: block;
-  font-size: xx-large;
-  text-align: center;
+  margin: 0 auto;
 }
-#forecast-temp {
+
+.forecast-temp {
   color: #00204a;
   font-size: smaller;
   text-align: center;
-  margin-top: 7px;
 }
-
-.forecast-temp-max {
-}
-
 .forecast-temp-min {
   opacity: 0.5;
 }
