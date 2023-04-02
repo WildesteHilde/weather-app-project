@@ -132,6 +132,19 @@ video {
   font-size: xx-large;
   text-align: center;
 }
+#forecast-temp {
+  color: #00204a;
+  font-size: smaller;
+  text-align: center;
+  margin-top: 7px;
+}
+
+.forecast-temp-max {
+}
+
+.forecast-temp-min {
+  opacity: 0.5;
+}
 .first-color {
   background: #fd5f00;
 }
